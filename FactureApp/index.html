@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+</head>
+
+<body>
+
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="success">
+                <ion-buttons slot="start">
+                    <ion-button slot="end">
+                        <ion-icon name="calculator-outline"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+                <ion-title>Factura App</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title><ion-icon name="bulb-sharp"></ion-icon>Kilobytes Por Mes</ion-card-title>
+                                <ion-card-content>
+                                    <ion-item>
+                                        <ion-label position="floating"><ion-icon name="return-up-forward-outline"></ion-icon>
+                                            Consumo De Este Mes
+                                        </ion-label>
+                                        <ion-input type="number" id="consumomes1">
+                                        </ion-input>
+                                    </ion-item>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Este Mes = <span id="totalxmes">0</span> Kilobytes</p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                </ion-card-content>
+
+                                <ion-card-content>
+                                    <ion-item>
+                                        <ion-label position="floating"><ion-icon name="return-up-forward-outline"></ion-icon>
+                                            Consumo Mes Pasado
+                                        </ion-label>
+                                        <ion-input type="number" id="consumomes2">
+                                        </ion-input>
+                                    </ion-item>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Mes Pasado= <span id="totalxmes2">0</span> Kilobytes</p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button color="success" id="button-guardar">
+                                        <ion-icon name="add-circle" slot="start"></ion-icon> Guardar Consumo
+                                    </ion-button>
+
+
+                                    <ion-button color="danger" fill="outline" id="button-limpiar">
+                                        <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+                                        Limpiar consumos
+                                    </ion-button>
+
+                                    <p style="margin-right: 2.5em;">Total: <span id="logica">0</span> Kilobytes x Mes</p>
+
+
+                                </ion-card-content>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title><ion-icon name="cog-sharp"></ion-icon>Ingresa el valor del kilobyte segun la factura</ion-card-title>
+                                <ion-card-content>
+                                    <ion-item>
+                                        <ion-label position="floating"><ion-icon name="return-up-forward-outline"></ion-icon>
+                                            Valor del Kilobyte
+                                        </ion-label>
+                                        <ion-input type="number" id="valorfactura">
+                                        </ion-input>
+                                    </ion-item>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Valor Kb = <span id="kilobytevalor">0</span></p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button color="success" id="button-factura">
+                                        <ion-icon name="add-circle" slot="start"></ion-icon> Guardar valor
+                                    </ion-button>
+
+
+                                    <ion-button color="danger" fill="outline" id="buttonlimpiarfac">
+                                        <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+                                        Limpiar kilobyte
+                                    </ion-button>
+
+                                    <p style="margin-right: 2.5em;">Total: <span id="kbpor">0</span> Kilobytes</p>
+
+                                </ion-card-content>
+
+                                </ion-card-content>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title><ion-icon name="people-sharp"></ion-icon>Ingresa el valor del subsidio</ion-card-title>
+                                <ion-card-content>
+                                    <ion-item>
+                                        <ion-label position="floating"><ion-icon name="return-up-forward-outline"></ion-icon>
+                                            Valor del Subsidio
+                                        </ion-label>
+                                        <ion-input type="number" id="valorsubsidio">
+                                        </ion-input>
+                                    </ion-item>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Subsidio = $ <span id="subsidiout"></span></p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button color="success" id="button-subsidio">
+                                        <ion-icon name="add-circle" slot="start"></ion-icon> Guardar Subsidio
+                                    </ion-button>
+
+
+                                    <ion-button color="danger" fill="outline" id="button-limpiarsubsidio">
+                                        <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+                                        Limpiar subsidio
+                                    </ion-button>
+
+                                    <p style="margin-right: 2.5em;">Total: $ <span id="div">0</span> Entre dos partes.</p>
+
+                                </ion-card-content>
+
+                                </ion-card-content>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row>
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title><ion-icon name="logo-usd"></ion-icon>Ingresa el valor total de la factura</ion-card-title>
+                                <ion-card-content>
+                                    <ion-item>
+                                        <ion-label position="floating"><ion-icon name="return-up-forward-outline"></ion-icon>
+                                            Valor total de la factura
+                                        </ion-label>
+                                        <ion-input type="number" id="valorfactotalinput">
+                                        </ion-input>
+                                    </ion-item>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Valor Total = $ <span id="valorfactotalout"></span></p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button color="success" id="button-facturatotal">
+                                        <ion-icon name="add-circle" slot="start"></ion-icon> Guardar valor
+                                    </ion-button>
+
+
+                                    <ion-button color="danger" fill="outline" id="button-limpiartotalfactura">
+                                        <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+                                        Limpiar valor factura
+                                    </ion-button>
+
+                                </ion-card-content>
+
+                                </ion-card-content>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title><ion-icon name="speedometer-sharp"></ion-icon>Resultados</ion-card-title>
+                                <ion-card-content>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">ellos pagan: $<span id="ellospaganout">0</span></p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Usted Paga: $<span id="ustedpagaout">0</span></p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button> 
+                                        <p style="margin-right: 2.5em;">Ellos consumieron: <span id="ellosconsumieronout">0</span> Kilobytes</p>
+                                        <ion-icon name="cellular-outline"></ion-icon>
+                                    </ion-button>
+
+                                    <ion-button color="success" id="buttonmostrar">
+                                        <ion-icon name="add-circle" slot="start"></ion-icon> Mostrar Resultados!
+                                    </ion-button>
+
+                                </ion-card-content>
+
+                                </ion-card-content>
+                            </ion-card-header>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+
+
+
+
+                <ion-row>
+
+                    <ion-col size-md="4" offset-md="4">
+                        <ion-list id="productList">
+
+                        </ion-list>
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-grid>
+        </ion-content>
+
+    </ion-app>
+
+    <script src="js/app.js"></script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</body>
+
+</html>
